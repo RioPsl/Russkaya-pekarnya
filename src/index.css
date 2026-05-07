@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Manrope:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Manrope", ui-sans-serif, system-ui;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-cream: #FAF6F0;
+  --color-warm: #F2E8D9;
+  --color-sand: #DEC49A;
+  --color-brown-primary: #4A2910;
+  --color-brown-secondary: #6B3E1F;
+  --color-gold-custom: #C49A3C;
+  --color-gold-bright: #E0B85A;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-cream text-neutral-900 font-sans antialiased;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-20 px-6 lg:px-[7%];
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
